@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Sanzan.io</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">
+        <img src="graphics/logo_clear.png" alt="Sanzan.io logo">
+        SANZAN.IO
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="mission.html">Mission</a>
+        <a href="about.html">About Us</a>
+        <a href="technology.html">Our Technology</a>
+        <a class="active" href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="content-wrapper">
+        <h1>Contact Sanzan.io</h1>
+        <p>We welcome investors, founders, and community partners who share our vision for regional prosperity.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="content-wrapper contact-grid">
+        <div class="contact-form">
+          <h3>Send a Message</h3>
+          <form>
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your full name">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com">
+            </label>
+            <label>
+              Organization
+              <input type="text" name="organization" placeholder="Company or affiliation">
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Let us know how we can collaborate"></textarea>
+            </label>
+            <button class="btn primary" type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="contact-details">
+          <div class="detail-card">
+            <h4>Headquarters</h4>
+            <p>Hakuba Impact Lab<br> 3020-879 Hokujō, Hakuba-mura<br> Nagano 399-9301 Japan</p>
+          </div>
+          <div class="detail-card">
+            <h4>Investor Relations</h4>
+            <p>invest@sanzan.io<br> +81 80 1234 5678</p>
+          </div>
+          <div class="detail-card">
+            <h4>Founder Pipeline</h4>
+            <p>Share your deck: founders@sanzan.io<br>Join our monthly open office hours in Hakuba or via video.</p>
+          </div>
+          <div class="map-placeholder">
+            Hakuba, Nagano Prefecture
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>© <span id="year">2024</span> Sanzan.io. Hakuba, Nagano Prefecture.</div>
+      <div class="social-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">Medium</a>
+        <a href="#">Investor Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

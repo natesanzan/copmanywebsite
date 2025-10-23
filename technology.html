@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Technology | Sanzan.io</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">
+        <img src="graphics/logo_clear.png" alt="Sanzan.io logo">
+        SANZAN.IO
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="mission.html">Mission</a>
+        <a href="about.html">About Us</a>
+        <a class="active" href="technology.html">Our Technology</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="content-wrapper">
+        <h1>Technology Stack</h1>
+        <p>Digital infrastructure that gives regional operators the same precision and intelligence as global players.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="content-wrapper">
+        <h2>Platform Architecture</h2>
+        <h3>From data to decisions.</h3>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>Hakuba Data Lake</h4>
+            <p>Centralized analytics environment aggregating demand, weather, mobility, and workforce data.</p>
+            <ul>
+              <li>Real-time ingestion pipelines from IoT and partner APIs.</li>
+              <li>Data models tuned for seasonal volatility and regional pricing.</li>
+              <li>Secure access for portfolio operators and municipal partners.</li>
+            </ul>
+          </div>
+          <div class="tech-card">
+            <h4>Operator Console</h4>
+            <p>Integrated dashboard providing operators with insights, alerts, and playbooks.</p>
+            <ul>
+              <li>Predictive staffing recommendations tied to visitor flow.</li>
+              <li>Carbon intensity tracking with automated reporting.</li>
+              <li>Collaboration spaces for cross-portfolio knowledge sharing.</li>
+            </ul>
+          </div>
+          <div class="tech-card">
+            <h4>Impact Intelligence</h4>
+            <p>Measurement engine translating raw data into impact metrics for investors.</p>
+            <ul>
+              <li>Dynamic impact scoring with benchmark comparisons.</li>
+              <li>Scenario modeling for fund strategy and capital planning.</li>
+              <li>Regulatory-ready ESG reporting modules.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-wrapper two-column">
+        <div class="card">
+          <h4>Innovation Lab</h4>
+          <p>We co-build with founders inside the Hakuba Impact Lab, pairing their vision with our data science and engineering team to accelerate market-ready solutions.</p>
+          <ul>
+            <li>Open API layer that lets startups integrate with the Sanzan operator network.</li>
+            <li>Machine learning guild facilitating shared experimentation and model reviews.</li>
+            <li>Joint product sprints focused on visitor experience, clean energy, and smart logistics.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Technology Principles</h2>
+          <h3>Responsible innovation with regional context.</h3>
+          <p class="lead">The tech that underpins our investments must be inclusive, privacy-preserving, and grounded in community trust.</p>
+          <ul class="values-list">
+            <li>
+              <strong>People-First Design</strong>
+              Software and tools are co-created with local operators ensuring usability across languages and skill levels.
+            </li>
+            <li>
+              <strong>Data Sovereignty</strong>
+              Community data remains in-region, with tiered permissions and rigorous governance.
+            </li>
+            <li>
+              <strong>Open Collaboration</strong>
+              We publish playbooks, contribute to civic open data, and engage academic partners to keep innovation cycle vibrant.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>© <span id="year">2024</span> Sanzan.io. Hakuba, Nagano Prefecture.</div>
+      <div class="social-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">Medium</a>
+        <a href="#">Investor Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
