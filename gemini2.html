@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Logo Intro</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #05070a;
+      color: #eee;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-intro {
+      position: relative;
+      width: 260px;          /* adjust size here */
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
+    }
+
+    .logo-frame {
+      overflow: hidden;      /* used for the reveal */
+    }
+
+    .logo-img {
+      width: 100%;
+      display: block;
+      transform: translateY(24px) scale(0.94);
+      opacity: 0;
+      animation: logo-in 1.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
+
+    /* thin line that “scans” under the logo */
+    .logo-intro::after {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      bottom: -10px;
+      height: 2px;
+      background: linear-gradient(90deg, #888, #fff, #888);
+      transform-origin: left center;
+      transform: scaleX(0);
+      opacity: 0;
+      animation: underline 0.5s ease-out 1.3s forwards;
+    }
+
+    @keyframes logo-in {
+      0% {
+        transform: translateY(24px) scale(0.94);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(0) scale(1.02);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) scale(1.0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes underline {
+      0% {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scaleX(1);
+        opacity: 0.9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-intro">
+    <div class="logo-frame">
+      <img
+        src="graphics/logo_clear_white.png"
+        alt="Company logo"
+        class="logo-img"
+      />
+    </div>
+  </div>
+</body>
+</html>

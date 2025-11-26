@@ -1,0 +1,33 @@
+<div class="logo-tilt">
+  <img src="graphics/logo_clear.png" class="logo-img2" alt="Company logo">
+</div>
+
+<style>
+  .logo-tilt {
+    perspective: 800px;
+    display: inline-block;
+  }
+
+  .logo-img2 {
+    width: 260px;
+    transform-origin: center;
+    transform: rotateX(12deg) translateY(10px);
+    opacity: 0;
+    animation: tilt-in 1.1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  @keyframes tilt-in {
+    0% {
+      transform: rotateX(20deg) translateY(24px) scale(0.96);
+      opacity: 0;
+    }
+    70% {
+      transform: rotateX(-2deg) translateY(0) scale(1.02);
+      opacity: 1;
+    }
+    100% {
+      transform: rotateX(0deg) translateY(0) scale(1.0);
+      opacity: 1;
+    }
+  }
+</style>

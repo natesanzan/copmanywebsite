@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanzan.io | Under Construction</title>
   <link rel="stylesheet" href="css/style.css">
+
   <style>
     .construction-hero {
       position: relative;
@@ -31,6 +32,61 @@
       display: grid;
       gap: 1.5rem;
     }
+
+    /* ------------- ADDED: LOGO ANIMATION ---------------- */
+    .logo-intro {
+      position: relative;
+      width: 360px;         /* adjust size */
+      margin: 0 auto -0.5rem auto;   /* spacing */
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,1.4));
+    }
+
+    .logo-frame { overflow: hidden; }
+
+    .logo-img {
+      width: 100%;
+      display: block;
+      transform: translateY(24px) scale(0.94);
+      opacity: 0;
+      animation: logo-in 1.4s cubic-bezier(0.23, 1, 0.32, 1) 1.0s forwards;
+    }
+
+    .logo-intro::after {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      bottom: -10px;
+      height: 2px;
+      background: linear-gradient(90deg, #adadad, #fff, #adadad);
+      transform-origin: left center;
+      transform: scaleX(0);
+      opacity: 0;
+      animation: underline 0.5s ease-out 1.3s forwards;
+     
+
+    }
+
+    @keyframes logo-in {
+      0% {
+        transform: translateY(24px) scale(0.94);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(0) scale(1.02);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes underline {
+      0%   { transform: scaleX(0); opacity: 0; }
+      100% { transform: scaleX(1); opacity: 0.9; }
+    }
+    /* ---------------------------------------------------- */
 
     .construction-content h1 {
       font-size: clamp(2.4rem, 6vw, 3.6rem);
@@ -84,13 +140,8 @@
     }
 
     @media (max-width: 640px) {
-      .construction-hero {
-        min-height: 90vh;
-      }
-
-      .construction-content p {
-        font-size: 1rem;
-      }
+      .construction-hero { min-height: 90vh; }
+      .construction-content p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -107,17 +158,20 @@
   <main>
     <section class="construction-hero">
       <div class="construction-content">
-        <span class="badge">Hakuba, Japan</span>
-        <h2>
-          Local presence. Global reach.
-        </h2>
-        <p>
-          Our mission is support regional economies across Japan
-          by investing in early-stage startups outside of major urban areas.</br></br>
-          
-          
-          Check back soon for more.
 
+        <!-- ADDED: ANIMATED LOGO -->
+        <div class="logo-intro">
+          <div class="logo-frame">
+            <img src="graphics/logo_clear_white.png" alt="Sanzan.io logo" class="logo-img">
+          </div>
+        </div>
+        <p></p>
+        <span class="badge">Hakuba, Japan</span>
+        <h2>Local presence. Global reach.</h2>
+        <p>
+          Volatility focused systematic multi-strat.
+          </br></br>
+          Check back soon for more.
         </p>
         <a class="contact-link" href="mailto:info@sanzan.io">info@sanzan.io</a>
       </div>
