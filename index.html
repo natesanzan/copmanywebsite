@@ -1,56 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanzan.io | Under Construction</title>
-  <link rel="stylesheet" href="css/style.css">
-
+  <meta charset="utf-8" />
+  <title>Logo Intro</title>
   <style>
-    .construction-hero {
-      position: relative;
-      background: url("graphics/background.jpg") center/cover no-repeat;
-      color: white;
-      min-height: 100vh;
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #05070a;
+      color: #eee;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 2rem;
     }
 
-    .construction-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(130deg, rgba(16, 35, 49, 0.88), rgba(79, 176, 198, 0.42));
-    }
-
-    .construction-content {
-      position: relative;
-      max-width: 620px;
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    /* ------------- ADDED: LOGO ANIMATION ---------------- */
     .logo-intro {
       position: relative;
-      width: 360px;         /* adjust size */
-      margin: 0 auto -0.5rem auto;   /* spacing */
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,1.4));
+      width: 260px;          /* adjust size here */
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
     }
 
-    .logo-frame { overflow: hidden; }
+    .logo-frame {
+      overflow: hidden;      /* used for the reveal */
+    }
 
     .logo-img {
       width: 100%;
       display: block;
       transform: translateY(24px) scale(0.94);
       opacity: 0;
-      animation: logo-in 1.4s cubic-bezier(0.23, 1, 0.32, 1) 1.0s forwards;
+      animation: logo-in 1.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
 
+    /* thin line that “scans” under the logo */
     .logo-intro::after {
       content: "";
       position: absolute;
@@ -58,13 +43,11 @@
       right: 12%;
       bottom: -10px;
       height: 2px;
-      background: linear-gradient(90deg, #adadad, #fff, #adadad);
+      background: linear-gradient(90deg, #888, #fff, #888);
       transform-origin: left center;
       transform: scaleX(0);
       opacity: 0;
       animation: underline 0.5s ease-out 1.3s forwards;
-     
-
     }
 
     @keyframes logo-in {
@@ -77,105 +60,121 @@
         opacity: 1;
       }
       100% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1.0);
         opacity: 1;
       }
     }
 
     @keyframes underline {
-      0%   { transform: scaleX(0); opacity: 0; }
-      100% { transform: scaleX(1); opacity: 0.9; }
-    }
-    /* ---------------------------------------------------- */
-
-    .construction-content h1 {
-      font-size: clamp(2.4rem, 6vw, 3.6rem);
-      margin: 0;
-      letter-spacing: -0.01em;
-    }
-
-    .construction-content p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.85);
-      margin: 0;
+      0% {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scaleX(1);
+        opacity: 0.9;
+      }
     }
 
-    .navbar .brand {
-      display: inline-flex;
+    .hero-stack {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.6rem;
-      font-size: 1.1rem;
-      letter-spacing: 0.12rem;
+      text-align: center;
+      gap: 28px;
+    }
+
+    .typed-lines {
+      font-family: "IBM Plex Mono", "Space Mono", "SFMono-Regular", "Roboto Mono",
+        Menlo, Consolas, monospace;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      color: #d4dee7;
+    }
+
+    .typed-line {
+      min-height: 1.4em;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .typed-line.caret::after {
+      content: "▌";
+      margin-left: 4px;
+      animation: blink 1s steps(1) infinite;
+      color: #60a9ff;
+    }
+
+    @keyframes blink {
+      0%, 49% {
+        opacity: 1;
+      }
+      50%, 100% {
+        opacity: 0;
+      }
+    }
+
+    .contact-note {
+      font-family: "IBM Plex Mono", "Space Mono", "SFMono-Regular", "Roboto Mono",
+        Menlo, Consolas, monospace;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      font-weight: 600;
-      color: white;
-    }
-
-    .navbar .brand img {
-      height: 42px;
-      width: auto;
-    }
-
-    .badge {
-      justify-self: center;
-    }
-
-    .contact-link {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.8rem 2rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      font-weight: 600;
-      letter-spacing: 0.05rem;
-      text-transform: uppercase;
-      color: white;
-      transition: background 200ms ease, transform 200ms ease;
-    }
-
-    .contact-link:hover,
-    .contact-link:focus {
-      background: rgba(79, 176, 198, 0.25);
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 640px) {
-      .construction-hero { min-height: 90vh; }
-      .construction-content p { font-size: 1rem; }
+      color: #7fa7ce;
+      margin-top: 18px;
+      opacity: 0.85;
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="brand">
-        <img src="graphics/logo_clear_white.png" alt="Sanzan.io logo">
-        SANZAN.IO
+  <div class="hero-stack">
+    <div class="logo-intro">
+      <div class="logo-frame">
+        <img
+          src="graphics/logo_clear_white.png"
+          alt="Company logo"
+          class="logo-img"
+        />
       </div>
-    </nav>
-  </header>
+    </div>
+    <div class="typed-lines" aria-live="polite">
+      <div class="typed-line line-primary" data-text="sanzan.io"></div>
+      <div class="typed-line line-secondary" data-text="coming soon"></div>
+      <p></p>   
+      <div class="typed-line line-tertiary" data-text="info@sanzan.io"></div>
+    </div>
+    
+  </div>
 
-  <main>
-    <section class="construction-hero">
-      <div class="construction-content">
+  <script>
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-        <!-- ADDED: ANIMATED LOGO -->
-        <div class="logo-intro">
-          <div class="logo-frame">
-            <img src="graphics/logo_clear_white.png" alt="Sanzan.io logo" class="logo-img">
-          </div>
-        </div>
-        <p></p>
-        <span class="badge">Hakuba, Japan</span>
-        <h2>Local presence. Global reach.</h2>
-        <p>
-          Volatility focused systematic multi-strat.
-          </br></br>
-          Check back soon for more.
-        </p>
-        <a class="contact-link" href="mailto:info@sanzan.io">info@sanzan.io</a>
-      </div>
-    </section>
-  </main>
+    async function typeLine(element, text, charDelay) {
+      element.textContent = "";
+      element.style.opacity = 1;
+      element.classList.add("caret");
+
+      for (const char of text) {
+        element.textContent += char;
+        await wait(charDelay + Math.random() * 1 );
+      }
+
+      element.classList.remove("caret");
+    }
+
+    async function runTypingSequence() {
+      const primary = document.querySelector(".line-primary");
+      const secondary = document.querySelector(".line-secondary");
+      const tertiary = document.querySelector(".line-tertiary");
+      
+      await wait(2500);
+      await typeLine(primary, primary.dataset.text, 110);
+      await wait(450);
+      await typeLine(secondary, secondary.dataset.text, 140);
+      await wait(450);
+      await typeLine(tertiary, tertiary.dataset.text, 100);}
+
+    document.addEventListener("DOMContentLoaded", runTypingSequence);
+  </script>
 </body>
 </html>
