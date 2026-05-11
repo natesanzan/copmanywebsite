@@ -1,204 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>sanzan.io</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background: #05070a;
-      color: #eee;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-intro {
-      position: relative;
-      width: 260px;          /* adjust size here */
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
-    }
-
-    .logo-frame {
-      overflow: hidden;      /* used for the reveal */
-    }
-
-    .logo-img {
-      width: 100%;
-      display: block;
-      transform: translateY(24px) scale(0.94);
-      opacity: 0;
-      animation: logo-in 1.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-    }
-
-    /* thin line that “scans” under the logo */
-    .logo-intro::after {
-      content: "";
-      position: absolute;
-      left: 12%;
-      right: 12%;
-      bottom: -10px;
-      height: 2px;
-      background: linear-gradient(90deg, #888, #fff, #888);
-      transform-origin: left center;
-      transform: scaleX(0);
-      opacity: 0;
-      animation: underline 0.5s ease-out 1.3s forwards;
-    }
-
-    @keyframes logo-in {
-      0% {
-        transform: translateY(24px) scale(0.94);
-        opacity: 0;
-      }
-      60% {
-        transform: translateY(0) scale(1.02);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(0) scale(1.0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes underline {
-      0% {
-        transform: scaleX(0);
-        opacity: 0;
-      }
-      100% {
-        transform: scaleX(1);
-        opacity: 0.9;
-      }
-    }
-
-    .hero-stack {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 28px;
-    }
-
-    .typed-lines {
-      font-family: "IBM Plex Mono", "Space Mono", "SFMono-Regular", "Roboto Mono",
-        Menlo, Consolas, monospace;
-      font-size: 1.05rem;
-      letter-spacing: 0.08em;
-      color: #d4dee7;
-    }
-
-    .typed-line {
-      min-height: 1.4em;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .typed-line.caret::after {
-      content: "▌";
-      margin-left: 4px;
-      animation: blink 1s steps(1) infinite;
-      color: #60a9ff;
-    }
-
-    @keyframes blink {
-      0%, 49% {
-        opacity: 1;
-      }
-      50%, 100% {
-        opacity: 0;
-      }
-    }
-
-    .contact-note {
-      font-family: "IBM Plex Mono", "Space Mono", "SFMono-Regular", "Roboto Mono",
-        Menlo, Consolas, monospace;
-      font-size: 0.95rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #7fa7ce;
-      margin-top: 18px;
-      opacity: 0.85;
-    }
-
-    @media (max-width: 640px) {
-      html, body {
-        padding: 20px 10px;
-      }
-
-      .hero-stack {
-        gap: 44px;
-      }
-
-      .logo-intro {
-        width: min(70vw, 420px);
-      }
-
-      .typed-lines {
-        font-size: 1.25rem;
-        letter-spacing: 0.11em;
-      }
-
-      .typed-line {
-        min-height: 2.1em;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanzan.io | Regional Investment Management in Hakuba, Japan</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="hero-stack">
-    <div class="logo-intro">
-      <div class="logo-frame">
-        <img
-          src="graphics/logo_clear_white.png"
-          alt="Company logo"
-          class="logo-img"
-        />
+  <header class="header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">
+        <img src="graphics/logo_clear_white.png" alt="Sanzan.io logo">
+        SANZAN.IO
+      </a>
+      <div class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="vantage.html">Vantage Login</a>
+        <a href="mission.html">Mission</a>
+        <a href="about.html">About Us</a>
+        <a href="technology.html">Our Technology</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="badge">Hakuba, Japan</span>
+        <h1>Regional Presence  Global Reach</h1>
+        <p>
+          Our mission is support regional economies across Japan
+          by investing in early-stage startups outside of major urban areas.</br></br>
+        </p>
+        <div class="btn-group">
+          <a class="btn primary" href="mission.html">Explore Our Mission</a>
+          <a class="btn secondary" href="contact.html">Connect with Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="content-wrapper">
+        <h2>Strategic Approach</h2>
+        <h3>We align capital with communities primed for long-term growth.</h3>
+        <div class="grid features">
+          <article class="card">
+            <h4>Regional Investment Thesis</h4>
+            <p>We focus on tourism, clean energy, and local enterprise platforms that are uniquely positioned to thrive within alpine markets.</p>
+          </article>
+          <article class="card">
+            <h4>Active Partnership Model</h4>
+            <p>Our operators-in-residence embed with founders to help scale operational excellence, digital infrastructure, and local hiring.</p>
+          </article>
+          <article class="card">
+            <h4>Impact-First Returns</h4>
+            <p>Performance metrics integrate financial yield with measurable job creation and sustainable development targets.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-wrapper two-column">
+        <div>
+          <h2>Regional Growth Flywheel</h2>
+          <h3>Transforming Hakuba into a launchpad for Japan's next generation of ventures.</h3>
+          <p class="highlight-text">From skiresort towns to dynamic innovation hubs, our portfolio companies reimagine how regional Japan attracts talent, retains families, and competes on a global stage.</p>
+          <ul class="values-list">
+            <li>
+              <strong>Talent Magnet</strong>
+              We fund workforce enablement programs and sponsor career pathways that keep skilled professionals in alpine regions.
+            </li>
+            <li>
+              <strong>Regenerative Tourism</strong>
+              Investments in infrastructure, hospitality tech, and cultural assets that deliver premium experiences with a light footprint.
+            </li>
+            <li>
+              <strong>Climate Resilience</strong>
+              Clean energy and smart building upgrades that future-proof local economies and reduce seasonal volatility.
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Portfolio Snapshot</h4>
+          <p>Examples of the innovation we foster across Nagano Prefecture and beyond:</p>
+          <ul>
+            <li>Alpine mobility network linking villages to year-round tourism corridors.</li>
+            <li>Data-driven lodging platform optimising revenue and seasonal employment.</li>
+            <li>Renewable microgrid venture powering ski operations and community utilities.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="content-wrapper">
+        <h2>Why It Matters</h2>
+        <h3>Regional revitalisation is Japan's next frontier.</h3>
+        <div class="grid">
+          <blockquote>
+            "Sanzan.io is proving that world-class financial discipline can co-exist with deep social impact. Their work in Nagano has become a blueprint for other prefectures." – Independent Advisor, Tokyo
+          </blockquote>
+          <blockquote>
+            "Their team understands the rhythm of mountain communities. They invest in people first, and that creates the resilience investors crave." – Hospitality Operator, Hakuba
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>© <span id="year">2024</span> Sanzan.io. Hakuba, Nagano Prefecture.</div>
+      <div class="social-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">Medium</a>
+        <a href="#">Investor Portal</a>
       </div>
     </div>
-    <div class="typed-lines" aria-live="polite">
-      <div class="typed-line line-primary" data-text="sanzan.io"></div>
-      <div class="typed-line line-secondary" data-text="coming soon"></div>
-      <p></p>   
-      <div class="typed-line line-tertiary" data-text="info@sanzan.io"></div>
-    </div>
-    
-  </div>
+  </footer>
 
   <script>
-    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-    async function typeLine(element, text, charDelay) {
-      element.textContent = "";
-      element.style.opacity = 1;
-      element.classList.add("caret");
-
-      for (const char of text) {
-        element.textContent += char;
-        await wait(charDelay + Math.random() * 1 );
-      }
-
-      element.classList.remove("caret");
-    }
-
-    async function runTypingSequence() {
-      const primary = document.querySelector(".line-primary");
-      const secondary = document.querySelector(".line-secondary");
-      const tertiary = document.querySelector(".line-tertiary");
-      
-      await wait(2500);
-      await typeLine(primary, primary.dataset.text, 110);
-      await wait(450);
-      await typeLine(secondary, secondary.dataset.text, 140);
-      await wait(450);
-      await typeLine(tertiary, tertiary.dataset.text, 100);}
-
-    document.addEventListener("DOMContentLoaded", runTypingSequence);
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
