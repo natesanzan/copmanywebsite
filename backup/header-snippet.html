@@ -1,0 +1,23 @@
+Sticky top header that was removed for the single-page launch.
+When the site has more than one page, paste the <header>...</header>
+block below back into index.html immediately after the opening <body> tag
+(and before <main>). The CSS for .header, .navbar, .logo, and .nav-links
+is still present in css/style.css and will work without changes.
+
+Add additional <a> links inside the .nav-links div as new pages are added.
+
+----- BEGIN HEADER MARKUP -----
+
+  <header class="header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">
+        <img src="graphics/logo_clear_white.png" alt="Sanzan.io logo">
+        SANZAN.IO
+      </a>
+      <div class="nav-links">
+        <a class="active" href="index.html">Home</a>
+      </div>
+    </nav>
+  </header>
+
+----- END HEADER MARKUP -----
